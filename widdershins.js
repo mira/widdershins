@@ -95,6 +95,8 @@ var argv = require('yargs')
     .describe('yaml','Display JSON schemas in YAML format.')
     .boolean('noInlineCollections')
     .describe('noInlineCollections', 'Do not expand collections of referenced schemas inline')
+    .array('generics')
+    .describe('generics', 'List of generic classes to pull out.')
     .help('h')
     .alias('h','Show help.')
     .version()
@@ -160,6 +162,7 @@ options.experimental = argv.experimental;
 options.resolve = argv.resolve;
 options.expandBody = argv.expandBody;
 options.noInlineCollections = argv.noInlineCollections;
+options.generics = argv.generics
 options.maxDepth = argv.maxDepth;
 options.omitBody = argv.omitBody;
 options.omitHeader = argv.omitHeader;
